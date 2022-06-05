@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Software2Business - Marian Grzesik</Authors>
+    <Company>Software2Business GmbH</Company>
+    <Copyright>Software2Business GmbH &amp; PrismLibrary</Copyright>
+    <PackageProjectUrl>https://github.com/Grzesik/PrismShell.Forms</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Grzesik/PrismShell.Forms</RepositoryUrl>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageLicenseExpression><license type="expression">MIT</license></PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

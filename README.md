@@ -1,1 +1,2 @@
 # PrismShell.Forms
+This library allows to use the Shell navigation in Xamarin.Forms and even though use some very convenient elements known from the [PrismLibrary](https://github.com/PrismLibrary/Prism). To reduce the dependencies and use the same interface like Prism, many files are copied from the original [PrismLibrary](https://github.com/PrismLibrary/Prism).
