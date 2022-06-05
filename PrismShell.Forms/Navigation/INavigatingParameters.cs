@@ -1,11 +1,5 @@
-﻿using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
-
-
-//New
 
 namespace Prism.Navigation
 {
@@ -17,6 +11,7 @@ namespace Prism.Navigation
         ////false - don't cancel;  true - cancel
         Func<Task<bool>> NavigationDialog { get; set; }
 
-        string Source { get;  }
+        string CurrentUrl { get; set; }
+        string TargetUrl { get; set; }
     }
 }
