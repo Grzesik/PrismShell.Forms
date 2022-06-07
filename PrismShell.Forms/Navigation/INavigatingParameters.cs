@@ -8,8 +8,9 @@ namespace Prism.Navigation
         INavigationParameters NavigationParamaters { get; }
 
         //New for canceling the navigation (used in OnNavigatedFrom)
-        ////false - don't cancel;  true - cancel
-        Func<Task<bool>> NavigationDialog { get; set; }
+        //false - don't cancel;  true - cancel
+        //If not defined - don't cancel
+        Func<Task<bool>> OnCancel { get; set; }
 
         string CurrentUrl { get; set; }
         string TargetUrl { get; set; }
