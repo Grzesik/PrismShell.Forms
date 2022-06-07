@@ -4,12 +4,23 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Software2Business - Marian Grzesik</Authors>
     <Company>Software2Business GmbH</Company>
-    <Copyright>Software2Business GmbH &amp; PrismLibrary</Copyright>
+    <Copyright>Copyright (c) Software2Business GmbH &amp; Prism Library</Copyright>
     <PackageProjectUrl>https://github.com/Grzesik/PrismShell.Forms</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Grzesik/PrismShell.Forms</RepositoryUrl>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
-    <PackageLicenseExpression><license type="expression">MIT</license></PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>PrismShell is a framework to build loosely coupled applications for Xamarin.Forms. It combines the Shell-Navigation with many convenient elements from the PrismLibrary.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageTags>prismshell;prism;shell;xamarin;xamarin.forms</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
