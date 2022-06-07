@@ -2,9 +2,9 @@
 
  
 
-PrismShell is a framework to build loosely coupled applications for Xamarin.Forms and .Net.Maui. It combines the Shell-Navigation with many convenient elements from the [PrismLibrary](https://github.com/PrismLibrary/Prism). This library doesn’t have any dependencies, therefore some files were copied and modified from the original PrismLibrary.  Most parts of the library are compatible with the PrismLibrary, but there are also some enhancements. 
+PrismShell is a framework to build loosely coupled applications for Xamarin.Forms and .Net.Maui. It combines the Shell-Navigation with many convenient elements from the [PrismLibrary](https://github.com/PrismLibrary/Prism). This library doesnâ€™t have any dependencies, therefore some files were copied and modified from the original PrismLibrary.  Most parts of the library are compatible with the PrismLibrary, but there are also some enhancements. 
 
-PrismShell is especially interesting for developers, who want to build Xamarin.Forms or .Net.Maui application based on the Shell and use the Shell navigation. If you’ve once used the PrismLibrary, you don’t want to miss many of the convenient elements from it. Please read the description, how to use the library. You'll find an example in the project [PrismShell.Forms](https://github.com/Grzesik/PrismShell.Forms) & [PrismShell.MAUI](https://github.com/Grzesik/PrismShell.Maui)
+PrismShell is especially interesting for developers, who want to build Xamarin.Forms or .Net.Maui application based on the Shell and use the Shell navigation. If youâ€™ve once used the PrismLibrary, you donâ€™t want to miss many of the convenient elements from it. Please read the description, how to use the library. You'll find an example in the project [PrismShell.Forms](https://github.com/Grzesik/PrismShell.Forms) & [PrismShell.MAUI](https://github.com/Grzesik/PrismShell.Maui)
 
  
 
@@ -18,7 +18,7 @@ Create a Shell application (Xamarin.Forms or .Net.Maui).
 
 ### Step2. Add Nuget Packages
 
-Add the PrismShell.Forms (for Xamarin.Forms) or the PrismShell.Maui (for .Net.Maui) Nuget package to the project. For Xamarin.Forms add it to the OS-Specific project and to the common project. For .NET.MAUI add it to the main project. 
+Add the [PrismShell.Forms](https://www.nuget.org/packages/PrismShell.Forms/) (for Xamarin.Forms) or the [PrismShell.Maui](https://www.nuget.org/packages/PrismShell.Maui/) (for .Net.Maui) Nuget package to the project. For Xamarin.Forms add it to the OS-Specific project and to the common project. For .NET.MAUI add it to the main project. 
 
 ### Step3. Add an IoC Container
 
@@ -33,7 +33,7 @@ First overload the AppShell like this:
 Example Shell.
 
 ```c#
-public partial class AppShell : PrismShell
+public partial class AppShell : Prism.PrismShell
 {
   public AppShell()
   {
@@ -45,6 +45,24 @@ public partial class AppShell : PrismShell
      Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
    }
 }
+
+For Xamarin:forms:
+
+prism:PrismShell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:prism="clr-namespace:Prism;assembly=PrismShell.Forms"
+       Title="ShellWithPrismForms"
+       x:Class="ShellWithPrismForms.AppShell">
+
+For .Net.Maui:
+           
+prism:PrismShell
+    x:Class="ShellWithPrismMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism;assembly=PrismShell.Maui"
+    Title="ShellWithPrismMaui">           
+           
 ```
 
  
@@ -61,7 +79,7 @@ Add all ViewModels to the IoC Container:
 var services = new ServiceCollection();
 
 services.AddTransient<MyViewModel>();
-…
+â€¦
 
 ServiceProvider = services.BuildServiceProvider();
 ```
@@ -121,7 +139,7 @@ public partial class App : Application
     ServiceProvider = services.BuildServiceProvider();
 
     //Initialize the framework!
-    PrismShell.Initialize(ServiceProvider);
+    Prism.PrismShell.Initialize(ServiceProvider);
   }
 
   void SetupFrameworkServices(IServiceCollection services)
@@ -297,7 +315,7 @@ Example.
 ```
 public MyViewModel(INavigationService navigtionService)
 {
-…
+â€¦
 
 async void OnItemSelected(Item item)
 {
